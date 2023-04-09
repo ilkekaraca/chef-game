@@ -16,6 +16,12 @@ window.onload = () => {
     new Bench(0, 150, ctx),
     new Bench(0, 300, ctx),
     new Bench(0, 450, ctx),
+    new Tomato(50, 500, ctx),
+    new Cabbage(50, 50, ctx),
+    new Plate(1100, 500, ctx),
+    new CuttingBoard(500, 200, ctx),
+    new ServiceArea(1050, 150, ctx),
+    new Trash(1100, 50, ctx),
   ];
   const chef = new Chef(750, 300, ctx, level1);
 
