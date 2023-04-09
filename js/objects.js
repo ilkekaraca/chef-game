@@ -99,6 +99,7 @@ class Chef extends GameObject {
     super(x, y, 50, 50, ctx);
     this.speed = 25;
     this.level = level;
+    this.hand = [];
   }
 
   draw = () => {
@@ -106,7 +107,15 @@ class Chef extends GameObject {
     // xPos, yPos, width, height
     this.ctx.fillRect(this.x, this.y, this.width, this.height);
   };
+
   move = (event) => {
+    if (event.key === " ") {
+      const actionArea = this.isActionArea();
+      if (actionArea) {
+        this.executeRules(actionArea);
+      }
+    }
+
     // temporary values of the chef to test it before moving
     let a = this.x,
       b = this.y;
@@ -135,13 +144,13 @@ class Chef extends GameObject {
       this.y = b;
     }
 
-    console.log(this.x, this.y);
+    // console.log(this.x, this.y);
     event.preventDefault();
   };
 
   isColliding = (x, y) => {
-    for (let i = 0; i < this.level.length; i++) {
-      const element = this.level[i];
+    for (let i = 0; i < this.level.obstacle.length; i++) {
+      const element = this.level.obstacle[i];
       if (
         x < element.x + element.width &&
         x + this.width > element.x &&
@@ -153,5 +162,65 @@ class Chef extends GameObject {
     }
 
     return false;
+  };
+
+  isActionArea = () => {
+    for (let i = 0; i < this.level.actionArea.length; i++) {
+      const actionArea = this.level.actionArea[i];
+      if (
+        this.x < actionArea.x + 150 &&
+        this.x + this.width > actionArea.x &&
+        this.y < actionArea.y + 150 &&
+        this.height + this.y > actionArea.y
+      ) {
+        // console.log(actionArea.name);
+        return actionArea.name;
+      }
+    }
+    console.log("not in action area");
+    return false;
+  };
+
+  executeRules = (actionAreaName) => {
+    switch (actionAreaName) {
+      case "Tomato":
+        if (this.hand.includes("Tomato") || this.hand.includes("Cabbage")) {
+          break;
+        } else {
+          this.hand.push("Tomato");
+          break;
+        }
+      case "Cabbage":
+        if (this.hand.includes("Tomato") || this.hand.includes("Cabbage")) {
+          break;
+        } else {
+          this.hand.push("Cabbage");
+          break;
+        }
+      case "CuttingBoard":
+        if (this.hand.includes("Tomato")) {
+          const tomatoIndex = this.hand.indexOf("Tomato");
+          this.hand.splice(tomatoIndex, 1);
+          this.hand.push("chopTomato");
+        }
+        if (this.hand.includes("Cabbage")) {
+          const tomatoIndex = this.hand.indexOf("Cabbage");
+          this.hand.splice(tomatoIndex, 1);
+          this.hand.push("chopCabbage");
+        }
+        break;
+      case "Plate":
+        if (!this.hand.includes("Plate")) {
+          this.hand.push("Plate");
+        }
+        break;
+      case "Trash":
+        this.hand = [];
+        break;
+      case "ServiceArea":
+        break;
+    }
+
+    console.log(this.hand);
   };
 }
