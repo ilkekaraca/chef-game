@@ -17,7 +17,7 @@ window.onload = () => {
     new Bench(0, 300, ctx),
     new Bench(0, 450, ctx),
   ];
-  const chef = new Chef(750, 300, ctx);
+  const chef = new Chef(750, 300, ctx, level1);
 
   function animate() {
     level1.forEach((item) => item.draw());

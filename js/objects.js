@@ -27,9 +27,10 @@ class Bench extends GameObject {
 }
 
 class Chef extends GameObject {
-  constructor(x, y, ctx) {
-    super(x, y, 70, 70, ctx);
-    this.speed = 20;
+  constructor(x, y, ctx, level) {
+    super(x, y, 50, 50, ctx);
+    this.speed = 25;
+    this.level = level;
   }
 
   draw = () => {
@@ -38,20 +39,51 @@ class Chef extends GameObject {
     this.ctx.fillRect(this.x, this.y, this.width, this.height);
   };
   move = (event) => {
+    // temporary values of the chef to test it before moving
+    let a = this.x,
+      b = this.y;
     this.ctx.clearRect(this.x, this.y, this.width, this.height);
-    if (event.key === "ArrowDown") {
-      this.y += this.speed;
+    if (
+      event.key === "ArrowDown" &&
+      this.y + this.height < this.ctx.canvas.height
+    ) {
+      b += this.speed;
     }
-    if (event.key === "ArrowUp") {
-      this.y -= this.speed;
+    if (event.key === "ArrowUp" && this.y > 0) {
+      b -= this.speed;
     }
-    if (event.key === "ArrowRight") {
-      this.x += this.speed;
+    if (
+      event.key === "ArrowRight" &&
+      this.x + this.width < this.ctx.canvas.width
+    ) {
+      a += this.speed;
     }
-    if (event.key === "ArrowLeft") {
-      this.x -= this.speed;
+    if (event.key === "ArrowLeft" && this.x > 0) {
+      a -= this.speed;
     }
 
+    if (!this.isColliding(a, b)) {
+      this.x = a;
+      this.y = b;
+    }
+
+    console.log(this.x, this.y);
     event.preventDefault();
+  };
+
+  isColliding = (x, y) => {
+    for (let i = 0; i < this.level.length; i++) {
+      const element = this.level[i];
+      if (
+        x < element.x + element.width &&
+        x + this.width > element.x &&
+        y < element.y + element.height &&
+        this.height + y > element.y
+      ) {
+        return true;
+      }
+    }
+
+    return false;
   };
 }
