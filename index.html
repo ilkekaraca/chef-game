@@ -9,10 +9,21 @@
   </head>
   <body>
     <div id="game-board">
+      <div id="orderspanel">
+        <div id="orders"></div>
+        <div id="time">00:00</div>
+        <div id="scoreboard">
+          <ul>
+            <li>Target Score:<span id="targetscore">1000</span></li>
+            <li>Score:<span id="score">500</span></li>
+          </ul>
+        </div>
+      </div>
       <canvas id="canvas"></canvas>
       <button id="start-button">StartGame</button>
     </div>
   </body>
+  <script src="js/orders.js"></script>
   <script src="js/objects.js"></script>
   <script type="text/javascript" src="js/index.js"></script>
 </html>

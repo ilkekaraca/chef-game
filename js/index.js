@@ -1,8 +1,8 @@
 window.onload = () => {
-  const canvas = document.querySelector("canvas");
+  const canvas = document.getElementById("canvas");
   canvas.width = 1200;
   canvas.height = 600;
-  canvas.style.border = "2px solid black";
+
   const ctx = canvas.getContext("2d");
   const level1 = {
     obstacle: [

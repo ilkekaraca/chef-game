@@ -1,3 +1,4 @@
+// base class to hold x,y,width,height,canvas
 class GameObject {
   constructor(x, y, width, height, ctx) {
     this.x = x;
@@ -7,7 +8,7 @@ class GameObject {
     this.ctx = ctx;
   }
 }
-
+//other classes extend from base class
 class Bench extends GameObject {
   constructor(x, y, ctx) {
     super(x, y, 150, 150, ctx);
