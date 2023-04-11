@@ -34,7 +34,9 @@ function updateCountdown() {
   const minutes = Math.floor(time / 60);
   let seconds = time % 60;
   if (time === 0) {
-    clearInterval(interval);
+    stopOrdering();
+
+    //to do show lose message!
   }
 
   countdownThree.innerHTML = `${minutes}:${seconds}`;
@@ -51,8 +53,14 @@ function stopOrdering() {
 }
 function updateScore() {
   const scoreIndex = document.getElementById("score");
-  const currentScore = Number(scoreIndex.innerText);
-  scoreIndex.innerText = currentScore + 50;
+  const currentScore = Number(scoreIndex.innerText) + 50;
+  const targetEl = document.getElementById("targetscore");
+  const targetScore = Number(targetEl.innerText);
+  scoreIndex.innerText = currentScore;
+  if (currentScore >= targetScore) {
+    stopOrdering();
+    //to do win screen!
+  }
 }
 function compareOrders(food) {
   const orderIndex = orders.findIndex((ord) =>

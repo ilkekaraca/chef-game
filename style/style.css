@@ -2,6 +2,12 @@
 *:before,
 *:after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  height: 100%;
 }
 
 #game-board {
@@ -15,8 +21,8 @@
   width: 1200px;
   height: 600px;
   border: 1px solid black;
-  background: url("/images/floor6.jpeg");
-  background-size: cover;
+  background: url("/images/tileset2.png");
+  background-size: 250px;
 }
 #start-button {
   margin-top: 50px;
@@ -51,4 +57,86 @@
   width: 50px;
   height: 70px;
   margin-right: 10px;
+}
+.hidden {
+  display: none !important;
+}
+.intro {
+  width: 100%;
+  position: relative;
+}
+.intro img {
+  width: 100%;
+}
+.intro p {
+  padding-bottom: 20px;
+}
+
+.intro ul li {
+  gap: 10px;
+}
+
+.intro .manual {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 20%;
+  bottom: 0;
+  margin: auto;
+  width: 600px;
+  font-family: cursive;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+}
+.start-button {
+  margin-top: 20px;
+  color: white;
+  font-family: cursive;
+  font-weight: bold;
+  font-size: 24px;
+  text-align: center;
+  text-decoration: none;
+  background-color: #ffa12b;
+  padding: 20px 40px;
+  text-shadow: 0px 1px 0px #000;
+  filter: dropshadow(color=#000, offx=0px, offy=1px);
+  box-shadow: inset 0 1px 0 #ffe5c4, 0 10px 0 #915100;
+  border-radius: 5px;
+}
+.start-button:active {
+  top: 10px;
+  background-color: #f78900;
+  box-shadow: inset 0 1px 0 #ffe5c4, inset 0 -3px 0 #915100;
+}
+.start-button::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  padding: 4px;
+  position: absolute;
+  bottom: -15px;
+  left: -4px;
+  z-index: -1;
+  background-color: #2b1800;
+  border-radius: 5px;
+}
+#restart-button {
+  margin-top: 20px;
+  color: white;
+  font-family: cursive;
+  font-weight: bold;
+  font-size: 24px;
+  text-align: center;
+  text-decoration: none;
+  background-color: #ffa12b;
+  padding: 20px 40px;
+  text-shadow: 0px 1px 0px #000;
+  filter: dropshadow(color=#000, offx=0px, offy=1px);
+  box-shadow: inset 0 1px 0 #ffe5c4, 0 10px 0 #915100;
+  border-radius: 5px;
 }

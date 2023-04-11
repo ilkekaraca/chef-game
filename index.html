@@ -8,20 +8,53 @@
     <link rel="stylesheet" href="style/style.css" />
   </head>
   <body>
-    <div id="game-board">
+    <!--START SCREEN-->
+    <div class="intro">
+      <img src="images/startscreen.jpg" alt="startscreen" />
+      <div class="manual">
+        <h1>HOT KITCHEN</h1>
+        <h2>How to Play</h2>
+        <p>
+          You are a great Chef! Your customers can't wait to eat your delicious
+          food :) All you have to do is to prepare the orders on time and reach
+          the target score,otherwise you may have to start all over again!
+        </p>
+
+        <ul>
+          <li>move Chef around using the arrow keys</li>
+          <li>serve and get the food using space</li>
+        </ul>
+        <button class="start-button">Start Game</button>
+      </div>
+    </div>
+    <!--GAMEPLAY SCREEN-->
+    <div id="game-board" class="hidden">
       <div id="orderspanel">
         <div id="orders"></div>
-        <div id="time">03:00</div>
+        <div id="time"></div>
         <div id="scoreboard">
           <ul>
             <li>Target Score:<span id="targetscore">1000</span></li>
-            <li>Score:<span id="score">500</span></li>
+            <li>Score:<span id="score">0</span></li>
           </ul>
         </div>
       </div>
+      <!--GAMEOVER SCREEN-->
+      <div class="gameover-screen">
+        <p class="end-instructions">
+          Oh No!
+          <br />
+          "Chef will have to start the game again!"
+        </p>
+
+        <div class="final-score">Score:</div>
+        <div class="high-score">High Score:</div>
+        <button id="restart-button">Restart</button>
+      </div>
+
       <canvas id="canvas"></canvas>
-      <button id="start-button">StartGame</button>
     </div>
+    <audio src="/images/POL-cookie-island-short.wav" loop></audio>
   </body>
   <script src="js/orders.js"></script>
   <script src="js/objects.js"></script>

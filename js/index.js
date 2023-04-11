@@ -45,11 +45,33 @@ window.onload = () => {
     requestAnimationFrame(animate);
   }
 
-  // //function startGame() {}
+  document.querySelector(".start-button").onclick = () => {
+    document.querySelector(".intro").classList.add("hidden");
+    document.querySelector("#game-board").classList.remove("hidden");
+    /*gameOverScreen.style.display = "none";*/
 
-  // document.getElementById("start-button").onclick = () => {
-  //   startGame();
-  // };
+    startOrdering();
+    animate();
+    document.querySelector("audio").play();
+  };
   document.addEventListener("keydown", chef.move);
-  animate();
+
+  /*//GAME OVER
+  
+  let isGameOver = false;
+
+  //  SCORE
+  const score = document.querySelector(".score");
+  const finalScore = document.querySelector(".final-score");
+  let scoreCounter = 0;
+  const highScore = document.querySelector(".high-score");
+  let highScoreCounter = 0;
+  const gameOvermessage = document.querySelector(".end-instructions");
+
+  let restartGameButton = document.querySelector("#restart-button");
+  const gameOverScreen = document.querySelector(".gameover-screen");*/
+
+  /*restartGameButton.addEventListener("click", () => {
+    document.querySelector(".gameover-screen");
+  });/*
 };
