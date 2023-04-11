@@ -41,6 +41,7 @@ window.onload = () => {
   function animate() {
     level1.obstacle.forEach((item) => item.draw());
     chef.draw();
+
     requestAnimationFrame(animate);
   }
 

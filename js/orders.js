@@ -5,6 +5,9 @@ const recipes = [
   ["chopCabbage", "chopTomato", "Plate"],
 ];
 function pickrecipes() {
+  if (orders.length === 4) {
+    return;
+  }
   let randomNumber = Math.floor(Math.random() * recipes.length);
   orders.push(recipes[randomNumber]);
   console.log(orders);
@@ -21,4 +24,45 @@ function printRecipes() {
     domeOrder.appendChild(createElement);
   }
 }
-setInterval(pickrecipes, 3000);
+let ordertimer, countdownid;
+
+const startingMinute = 1;
+let time = startingMinute * 60;
+const countdownThree = document.getElementById("time");
+
+function updateCountdown() {
+  const minutes = Math.floor(time / 60);
+  let seconds = time % 60;
+  if (time === 0) {
+    clearInterval(interval);
+  }
+
+  countdownThree.innerHTML = `${minutes}:${seconds}`;
+  time--;
+}
+
+function startOrdering() {
+  ordertimer = setInterval(pickrecipes, 3000);
+  countdownid = setInterval(updateCountdown, 1000);
+}
+function stopOrdering() {
+  clearInterval(ordertimer);
+  clearInterval(countdownid);
+}
+function updateScore() {
+  const scoreIndex = document.getElementById("score");
+  const currentScore = Number(scoreIndex.innerText);
+  scoreIndex.innerText = currentScore + 50;
+}
+function compareOrders(food) {
+  const orderIndex = orders.findIndex((ord) =>
+    ord.every((ing) => food.includes(ing))
+  );
+  if (orderIndex > -1) {
+    orders.splice(orderIndex, 1);
+    printRecipes();
+    updateScore();
+  } else {
+    alert("NO NO");
+  }
+}

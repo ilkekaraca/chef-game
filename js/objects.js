@@ -12,14 +12,18 @@ class GameObject {
 class Bench extends GameObject {
   constructor(x, y, ctx) {
     super(x, y, 150, 150, ctx);
+    this.image = new Image(150, 150);
+    this.image.src = `/images/cabinet.png`;
   }
 
   draw = () => {
-    this.ctx.fillStyle = "teal";
-    // xPos, yPos, width, height
-    this.ctx.fillRect(this.x, this.y, this.width, this.height);
-    this.ctx.strokeStyle = "black";
-    this.ctx.strokeRect(this.x, this.y, this.width, this.height);
+    // this.ctx.fillStyle = "teal";
+    // // xPos, yPos, width, height
+    // this.ctx.fillRect(this.x, this.y, this.width, this.height);
+    // this.ctx.strokeStyle = "black";
+    // this.ctx.strokeRect(this.x, this.y, this.width, this.height);
+
+    this.ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
   };
 }
 class Tomato extends GameObject {

@@ -1,22 +1,48 @@
-# Project's name
+# Hot Kitchen
 
 [Click here to see deployed game](http://github.com)
 
 ## Description
 
-Brief description of the project
+Hot kitchen is a game which has to complete the orders in full, on time and reach the target score.The game ends when the target score is not reached and the game is not finished in the set time.After that, a score is calculated and if the player wants to play again, the player can restart the game.
 
-## MVP
+## MVP(DOM-CANVAS)
 
-_MVP definition here, list of minimum features_
+<ul>
+<li>game has a chef that moves left,right,up and down</li>
+<li>orders appear randomly on the screen</li>
+<li>orders are prepared</li>
+<li>completed orders are delivered to the service area</li>
+<li>failure to reach the target score within the set time limit ends the game</li>
+</ul>
 
 ## Backlog
 
-_List of features you might implement after the MVP_
-
 ## Data structure
 
-_List of classes and methods_
+#index.js
+
+<ul>
+<li>window.onload = ()</li>
+<li>function animate ()</li>
+<li>function startGame()</li>
+</ul>
+
+#objects.js
+
+<ul>
+<li>class GameObjects {}</li>
+<li>class Bench extends GameObjects{}</li>
+<li>class Tomato extends GameObjects{}</li>
+</ul>
+
+#orders.js
+
+<ul>
+<li>const recipes=[]</li>
+<li>function pickrecipes(){}</li>
+<li>function printrecipes(){}</li>
+</ul>
 
 ## States y States Transitions
 

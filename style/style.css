@@ -15,7 +15,8 @@
   width: 1200px;
   height: 600px;
   border: 1px solid black;
-  /*background: url("https://i.pinimg.com/564x/d6/a5/4f/d6a54fcf7a30aadf81e878a39487cb9a.jpg");*/
+  background: url("/images/floor6.jpeg");
+  background-size: cover;
 }
 #start-button {
   margin-top: 50px;
@@ -43,8 +44,7 @@
 }
 #orders {
   display: flex;
-  max-width: 250px;
-  overflow: hidden;
+  width: 250px;
 }
 #orders .recipe {
   border: 1px solid red;
