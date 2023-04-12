@@ -36,14 +36,15 @@ function showEndScreen(win) {
     highScoreEl.innerText = currentHighScore;
   }
   document.querySelector("audio").pause();
+  document.getElementById("score").innerText = "0";
 }
 
 function printRecipes() {
   const domeOrder = document.getElementById("orders");
   domeOrder.replaceChildren();
   for (let i = 0; i < orders.length; i++) {
-    const createElement = document.createElement("div");
-    createElement.textContent = orders[i].join(" ");
+    const createElement = document.createElement("img");
+    createElement.src = `images/${orders[i].join("")}.png`;
     createElement.className = "recipe";
     domeOrder.appendChild(createElement);
   }
@@ -71,6 +72,8 @@ function startOrdering() {
   time = startingMinute * 60;
   ordertimer = setInterval(pickrecipes, 3000);
   countdownid = setInterval(updateCountdown, 1000);
+  orders = [];
+  printRecipes();
 }
 function stopOrdering() {
   clearInterval(ordertimer);
@@ -95,7 +98,9 @@ function compareOrders(food) {
     orders.splice(orderIndex, 1);
     printRecipes();
     updateScore();
+    return true;
   } else {
     alert("NO NO");
+    return false;
   }
 }

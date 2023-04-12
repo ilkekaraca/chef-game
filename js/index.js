@@ -17,12 +17,16 @@ window.onload = () => {
       new Bench(0, 150, ctx),
       new Bench(0, 300, ctx),
       new Bench(0, 450, ctx),
-      new Tomato(50, 500, ctx),
-      new Cabbage(50, 50, ctx),
-      new Plate(1100, 500, ctx),
-      new CuttingBoard(500, 200, ctx),
-      new ServiceArea(1050, 150, ctx),
-      new Trash(1100, 50, ctx),
+      new Tomato(20, 500, ctx),
+      new Cabbage(20, 30, ctx),
+      new Plate(1050, 450, ctx),
+      new CuttingBoard(450, 150, ctx),
+      new ServiceArea(1050, 300, ctx),
+      new Trash(1050, 0, ctx),
+      new RangeHood(750, 450, ctx),
+      new Stove(0, 300, ctx),
+      new Flower(300, 0, ctx),
+      new KitchenSink(0, 150, ctx),
     ],
     actionArea: [
       { name: "Tomato", x: 50, y: 450 },
@@ -48,11 +52,11 @@ window.onload = () => {
   document.querySelectorAll(".start-button").forEach(
     (button) =>
       (button.onclick = () => {
-        document
-          .querySelector(".intro,.gameover-screen")
-          .classList.add("hidden");
+        document.querySelector(".intro").classList.add("hidden");
+        document.querySelector(".gameover-screen").classList.add("hidden");
         document.querySelector("#game-board").classList.remove("hidden");
 
+        chef.resetHand();
         startOrdering();
         animate();
         document.querySelector("audio").play();

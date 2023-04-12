@@ -12,47 +12,68 @@ class GameObject {
 class Bench extends GameObject {
   constructor(x, y, ctx) {
     super(x, y, 150, 150, ctx);
+    this.image = new Image(50, 50);
+    this.image.src = `images/tezgahdene.png`;
   }
 
   draw = () => {
-    this.ctx.fillStyle = "#4287f5";
+    //this.ctx.fillStyle = "#4287f5";
     // xPos, yPos, width, height
-    this.ctx.fillRect(this.x, this.y, this.width, this.height);
-    this.ctx.strokeStyle = "black";
-    this.ctx.strokeRect(this.x, this.y, this.width, this.height);
+    //this.ctx.fillRect(this.x, this.y, this.width, this.height);
+    //this.ctx.strokeStyle = "black";
+    //this.ctx.strokeRect(this.x, this.y, this.width, this.height);
 
-    //this.ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
+    this.ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
   };
 }
 class Tomato extends GameObject {
   constructor(x, y, ctx) {
     super(x, y, 50, 50, ctx);
+    this.image = new Image(100, 100);
+    this.image.src = `images/tomato.png`;
   }
   draw = () => {
-    this.ctx.fillStyle = "tomato";
+    //this.ctx.fillStyle = "tomato";
     // xPos, yPos, width, height
-    this.ctx.fillRect(this.x, this.y, this.width, this.height);
-    this.ctx.strokeStyle = "black";
-    this.ctx.strokeRect(this.x, this.y, this.width, this.height);
+    //his.ctx.fillRect(this.x, this.y, this.width, this.height);
+    //this.ctx.strokeStyle = "black";
+    //this.ctx.strokeRect(this.x, this.y, this.width, this.height);
+    this.ctx.drawImage(
+      this.image,
+      this.x,
+      this.y,
+      this.image.width,
+      this.image.height
+    );
   };
 }
 class Cabbage extends GameObject {
   constructor(x, y, ctx) {
     super(x, y, 50, 50, ctx);
+    this.image = new Image(100, 100);
+    this.image.src = `images/cabbage.png`;
   }
+
   draw = () => {
-    this.ctx.fillStyle = "green";
+    //this.ctx.fillStyle = "green";
     // xPos, yPos, width, height
-    this.ctx.fillRect(this.x, this.y, this.width, this.height);
-    this.ctx.strokeStyle = "black";
-    this.ctx.strokeRect(this.x, this.y, this.width, this.height);
+    // this.ctx.fillRect(this.x, this.y, this.width, this.height);
+    //this.ctx.strokeStyle = "black";
+    //this.ctx.strokeRect(this.x, this.y, this.width, this.height);
+    this.ctx.drawImage(
+      this.image,
+      this.x,
+      this.y,
+      this.image.width,
+      this.image.height
+    );
   };
 }
 class Plate extends GameObject {
   constructor(x, y, ctx) {
     super(x, y, 50, 50, ctx);
-    this.image = new Image(50, 50);
-    this.image.src = `images/Plate.png`;
+    this.image = new Image(150, 150);
+    this.image.src = `images/plate.png`;
   }
   draw = () => {
     // this.ctx.fillStyle = "white";
@@ -61,43 +82,161 @@ class Plate extends GameObject {
     // this.ctx.strokeStyle = "black";
     // this.ctx.strokeRect(this.x, this.y, this.width, this.height);
 
-    this.ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
+    this.ctx.drawImage(
+      this.image,
+      this.x,
+      this.y,
+      this.image.width,
+      this.image.height
+    );
   };
 }
+
 class CuttingBoard extends GameObject {
   constructor(x, y, ctx) {
     super(x, y, 50, 50, ctx);
+    this.image = new Image(150, 150);
+    this.image.src = `images/cuttingboard.png`;
   }
   draw = () => {
-    this.ctx.fillStyle = "brown";
+    //this.ctx.fillStyle = "brown";
     // xPos, yPos, width, height
-    this.ctx.fillRect(this.x, this.y, this.width, this.height);
-    this.ctx.strokeStyle = "black";
-    this.ctx.strokeRect(this.x, this.y, this.width, this.height);
+    //this.ctx.fillRect(this.x, this.y, this.width, this.height);
+    //this.ctx.strokeStyle = "black";
+    //this.ctx.strokeRect(this.x, this.y, this.width, this.height);
+    this.ctx.drawImage(
+      this.image,
+      this.x,
+      this.y,
+      this.image.width,
+      this.image.height
+    );
   };
 }
 class ServiceArea extends GameObject {
   constructor(x, y, ctx) {
     super(x, y, 150, 300, ctx);
+    this.image = new Image(150, 150);
+    this.image.src = `images/arrowsign.png`;
   }
   draw = () => {
-    this.ctx.fillStyle = "yellow";
+    // this.ctx.fillStyle = "yellow";
     // xPos, yPos, width, height
-    this.ctx.fillRect(this.x, this.y, this.width, this.height);
-    this.ctx.strokeStyle = "black";
-    this.ctx.strokeRect(this.x, this.y, this.width, this.height);
+    //this.ctx.fillRect(this.x, this.y, this.width, this.height);
+    //this.ctx.strokeStyle = "black";
+    //this.ctx.strokeRect(this.x, this.y, this.width, this.height);
+    this.ctx.drawImage(
+      this.image,
+      this.x,
+      this.y,
+      this.image.width,
+      this.image.height
+    );
   };
 }
 class Trash extends GameObject {
   constructor(x, y, ctx) {
     super(x, y, 50, 50, ctx);
+    this.image = new Image(150, 150);
+    this.image.src = `images/trash.png`;
   }
   draw = () => {
-    this.ctx.fillStyle = "grey";
+    //this.ctx.fillStyle = "grey";
     // xPos, yPos, width, height
-    this.ctx.fillRect(this.x, this.y, this.width, this.height);
-    this.ctx.strokeStyle = "black";
-    this.ctx.strokeRect(this.x, this.y, this.width, this.height);
+    //this.ctx.fillRect(this.x, this.y, this.width, this.height);
+    //this.ctx.strokeStyle = "black";
+    //this.ctx.strokeRect(this.x, this.y, this.width, this.height);
+    this.ctx.drawImage(
+      this.image,
+      this.x,
+      this.y,
+      this.image.width,
+      this.image.height
+    );
+  };
+}
+class RangeHood extends GameObject {
+  constructor(x, y, ctx) {
+    super(x, y, 50, 50, ctx);
+    this.image = new Image(150, 150);
+    this.image.src = `images/davlumbaz.png`;
+  }
+  draw = () => {
+    //this.ctx.fillStyle = "grey";
+    // xPos, yPos, width, height
+    //this.ctx.fillRect(this.x, this.y, this.width, this.height);
+    //this.ctx.strokeStyle = "black";
+    //this.ctx.strokeRect(this.x, this.y, this.width, this.height);
+    this.ctx.drawImage(
+      this.image,
+      this.x,
+      this.y,
+      this.image.width,
+      this.image.height
+    );
+  };
+}
+class Stove extends GameObject {
+  constructor(x, y, ctx) {
+    super(x, y, 50, 50, ctx);
+    this.image = new Image(150, 150);
+    this.image.src = `images/stove.png`;
+  }
+  draw = () => {
+    //this.ctx.fillStyle = "grey";
+    // xPos, yPos, width, height
+    //this.ctx.fillRect(this.x, this.y, this.width, this.height);
+    //this.ctx.strokeStyle = "black";
+    //this.ctx.strokeRect(this.x, this.y, this.width, this.height);
+    this.ctx.drawImage(
+      this.image,
+      this.x,
+      this.y,
+      this.image.width,
+      this.image.height
+    );
+  };
+}
+class Flower extends GameObject {
+  constructor(x, y, ctx) {
+    super(x, y, 50, 50, ctx);
+    this.image = new Image(150, 150);
+    this.image.src = `images/flower.png`;
+  }
+  draw = () => {
+    //this.ctx.fillStyle = "grey";
+    // xPos, yPos, width, height
+    //this.ctx.fillRect(this.x, this.y, this.width, this.height);
+    //this.ctx.strokeStyle = "black";
+    //this.ctx.strokeRect(this.x, this.y, this.width, this.height);
+    this.ctx.drawImage(
+      this.image,
+      this.x,
+      this.y,
+      this.image.width,
+      this.image.height
+    );
+  };
+}
+class KitchenSink extends GameObject {
+  constructor(x, y, ctx) {
+    super(x, y, 50, 50, ctx);
+    this.image = new Image(150, 150);
+    this.image.src = `images/sink.png`;
+  }
+  draw = () => {
+    //this.ctx.fillStyle = "grey";
+    // xPos, yPos, width, height
+    //this.ctx.fillRect(this.x, this.y, this.width, this.height);
+    //this.ctx.strokeStyle = "black";
+    //this.ctx.strokeRect(this.x, this.y, this.width, this.height);
+    this.ctx.drawImage(
+      this.image,
+      this.x,
+      this.y,
+      this.image.width,
+      this.image.height
+    );
   };
 }
 
@@ -108,6 +247,10 @@ class Chef extends GameObject {
     this.level = level;
     this.hand = [];
   }
+
+  resetHand = () => {
+    this.hand = [];
+  };
 
   draw = () => {
     this.ctx.fillStyle = "pink";
@@ -225,7 +368,10 @@ class Chef extends GameObject {
         this.hand = [];
         break;
       case "ServiceArea":
-        compareOrders(this.hand);
+        const found = compareOrders(this.hand);
+        if (found) {
+          this.hand = [];
+        }
         break;
     }
 
