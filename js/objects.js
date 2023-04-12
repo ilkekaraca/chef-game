@@ -116,8 +116,8 @@ class CuttingBoard extends GameObject {
 class ServiceArea extends GameObject {
   constructor(x, y, ctx) {
     super(x, y, 150, 300, ctx);
-    this.image = new Image(150, 150);
-    this.image.src = `images/arrowsign.png`;
+    this.image = new Image(150, 300);
+    this.image.src = `images/servicearea.png`;
   }
   draw = () => {
     // this.ctx.fillStyle = "yellow";
@@ -242,10 +242,12 @@ class KitchenSink extends GameObject {
 
 class Chef extends GameObject {
   constructor(x, y, ctx, level) {
-    super(x, y, 50, 50, ctx);
+    super(x, y, 80, 120, ctx);
     this.speed = 25;
     this.level = level;
     this.hand = [];
+    this.image = new Image(80, 120);
+    this.image.src = `images/chef.png`;
   }
 
   resetHand = () => {
@@ -253,9 +255,18 @@ class Chef extends GameObject {
   };
 
   draw = () => {
-    this.ctx.fillStyle = "pink";
+    //this.ctx.fillStyle = "pink";
     // xPos, yPos, width, height
-    this.ctx.fillRect(this.x, this.y, this.width, this.height);
+    //this.ctx.fillRect(this.x, this.y, this.width, this.height);
+    this.ctx.clearRect(this.x, this.y, this.width, this.height);
+
+    this.ctx.drawImage(
+      this.image,
+      this.x,
+      this.y,
+      this.image.width,
+      this.image.height
+    );
   };
 
   move = (event) => {

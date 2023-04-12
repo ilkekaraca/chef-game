@@ -21,7 +21,7 @@ window.onload = () => {
       new Cabbage(20, 30, ctx),
       new Plate(1050, 450, ctx),
       new CuttingBoard(450, 150, ctx),
-      new ServiceArea(1050, 300, ctx),
+      new ServiceArea(1050, 150, ctx),
       new Trash(1050, 0, ctx),
       new RangeHood(750, 450, ctx),
       new Stove(0, 300, ctx),
