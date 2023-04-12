@@ -252,6 +252,19 @@ class Chef extends GameObject {
 
   resetHand = () => {
     this.hand = [];
+    const handEl = document.getElementById("hand");
+    handEl.replaceChildren();
+  };
+
+  drawHand = () => {
+    const handEl = document.getElementById("hand");
+    handEl.replaceChildren();
+    for (let i = 0; i < this.hand.length; i++) {
+      const createElement = document.createElement("img");
+      createElement.src = `images/${this.hand[i]}.png`;
+      createElement.className = "handObj";
+      handEl.appendChild(createElement);
+    }
   };
 
   draw = () => {
@@ -259,7 +272,6 @@ class Chef extends GameObject {
     // xPos, yPos, width, height
     //this.ctx.fillRect(this.x, this.y, this.width, this.height);
     this.ctx.clearRect(this.x, this.y, this.width, this.height);
-
     this.ctx.drawImage(
       this.image,
       this.x,
@@ -385,7 +397,7 @@ class Chef extends GameObject {
         }
         break;
     }
-
+    this.drawHand();
     console.log(this.hand);
   };
 }

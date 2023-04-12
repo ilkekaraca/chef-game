@@ -125,3 +125,13 @@ body {
   z-index: -1;
   border-radius: 5px;
 }
+#time {
+  width: 90px;
+}
+#handParent {
+  height: 80px;
+  width: 120px;
+}
+.handObj {
+  width: 40px;
+}
