@@ -39,21 +39,27 @@
           </ul>
         </div>
       </div>
-      <!--GAMEOVER SCREEN-->
-      <div class="gameover-screen">
-        <p class="end-instructions">
-          Oh No!
-          <br />
-          "Chef will have to start the game again!"
-        </p>
-
-        <div class="final-score">Score:</div>
-        <div class="high-score">High Score:</div>
-        <button id="restart-button">Restart</button>
-      </div>
 
       <canvas id="canvas"></canvas>
     </div>
+    <!--GAMEOVER SCREEN-->
+    <div class="gameover-screen hidden">
+      <p class="end-instructions-lost hidden">
+        Oh No!
+        <br />
+        "Chef will have to start the game again!"
+      </p>
+      <p class="end-instructions-win hidden">
+        Congratulations!
+        <br />
+        "You are a great CHEF!!!"
+      </p>
+
+      <div>Score:<span id="final-score">0</span></div>
+      <div>High Score:<span id="high-score">1000</span></div>
+      <button class="start-button">Restart</button>
+    </div>
+
     <audio src="/images/POL-cookie-island-short.wav" loop></audio>
   </body>
   <script src="js/orders.js"></script>

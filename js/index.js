@@ -45,33 +45,18 @@ window.onload = () => {
     requestAnimationFrame(animate);
   }
 
-  document.querySelector(".start-button").onclick = () => {
-    document.querySelector(".intro").classList.add("hidden");
-    document.querySelector("#game-board").classList.remove("hidden");
-    /*gameOverScreen.style.display = "none";*/
+  document.querySelectorAll(".start-button").forEach(
+    (button) =>
+      (button.onclick = () => {
+        document
+          .querySelector(".intro,.gameover-screen")
+          .classList.add("hidden");
+        document.querySelector("#game-board").classList.remove("hidden");
 
-    startOrdering();
-    animate();
-    document.querySelector("audio").play();
-  };
+        startOrdering();
+        animate();
+        document.querySelector("audio").play();
+      })
+  );
   document.addEventListener("keydown", chef.move);
-
-  /*//GAME OVER
-  
-  let isGameOver = false;
-
-  //  SCORE
-  const score = document.querySelector(".score");
-  const finalScore = document.querySelector(".final-score");
-  let scoreCounter = 0;
-  const highScore = document.querySelector(".high-score");
-  let highScoreCounter = 0;
-  const gameOvermessage = document.querySelector(".end-instructions");
-
-  let restartGameButton = document.querySelector("#restart-button");
-  const gameOverScreen = document.querySelector(".gameover-screen");*/
-
-  /*restartGameButton.addEventListener("click", () => {
-    document.querySelector(".gameover-screen");
-  });/*
 };

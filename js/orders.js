@@ -13,6 +13,30 @@ function pickrecipes() {
   console.log(orders);
   printRecipes();
 }
+function showEndScreen(win) {
+  document.querySelector("#game-board").classList.add("hidden");
+  document.querySelector(".gameover-screen").classList.remove("hidden");
+  if (win) {
+    document.querySelector(".end-instructions-win").classList.remove("hidden");
+  } else {
+    document.querySelector(".end-instructions-lost").classList.remove("hidden");
+  }
+  const currentScore = Number(document.getElementById("score").innerText);
+  document.querySelector("#final-score").innerText = currentScore;
+
+  const highScoreEl = document.querySelector("#high-score");
+  const currentHighScore = localStorage.getItem("chefgame");
+  if (
+    (currentHighScore && currentHighScore < currentScore) ||
+    currentHighScore === null
+  ) {
+    localStorage.setItem("chefgame", currentScore);
+    highScoreEl.innerText = currentScore;
+  } else if (currentHighScore && currentHighScore > currentScore) {
+    highScoreEl.innerText = currentHighScore;
+  }
+  document.querySelector("audio").pause();
+}
 
 function printRecipes() {
   const domeOrder = document.getElementById("orders");
@@ -26,8 +50,7 @@ function printRecipes() {
 }
 let ordertimer, countdownid;
 
-const startingMinute = 1;
-let time = startingMinute * 60;
+let time;
 const countdownThree = document.getElementById("time");
 
 function updateCountdown() {
@@ -36,7 +59,7 @@ function updateCountdown() {
   if (time === 0) {
     stopOrdering();
 
-    //to do show lose message!
+    showEndScreen(false);
   }
 
   countdownThree.innerHTML = `${minutes}:${seconds}`;
@@ -44,6 +67,8 @@ function updateCountdown() {
 }
 
 function startOrdering() {
+  const startingMinute = 1;
+  time = startingMinute * 60;
   ordertimer = setInterval(pickrecipes, 3000);
   countdownid = setInterval(updateCountdown, 1000);
 }
@@ -59,7 +84,7 @@ function updateScore() {
   scoreIndex.innerText = currentScore;
   if (currentScore >= targetScore) {
     stopOrdering();
-    //to do win screen!
+    showEndScreen(true);
   }
 }
 function compareOrders(food) {
