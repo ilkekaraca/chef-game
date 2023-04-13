@@ -25,8 +25,10 @@ window.onload = () => {
       new Trash(1050, 0, ctx),
       new RangeHood(750, 450, ctx),
       new Stove(0, 300, ctx),
-      new Flower(300, 0, ctx),
+      new Topf(300, 0, ctx),
       new KitchenSink(0, 150, ctx),
+      new Cake(300, 150, ctx),
+      new Pasta(750, 0, ctx),
     ],
     actionArea: [
       { name: "Tomato", x: 50, y: 450 },

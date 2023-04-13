@@ -197,11 +197,53 @@ class Stove extends GameObject {
     );
   };
 }
-class Flower extends GameObject {
+class Topf extends GameObject {
   constructor(x, y, ctx) {
     super(x, y, 50, 50, ctx);
     this.image = new Image(150, 150);
-    this.image.src = `images/flower.png`;
+    this.image.src = `images/topf.png`;
+  }
+  draw = () => {
+    //this.ctx.fillStyle = "grey";
+    // xPos, yPos, width, height
+    //this.ctx.fillRect(this.x, this.y, this.width, this.height);
+    //this.ctx.strokeStyle = "black";
+    //this.ctx.strokeRect(this.x, this.y, this.width, this.height);
+    this.ctx.drawImage(
+      this.image,
+      this.x,
+      this.y,
+      this.image.width,
+      this.image.height
+    );
+  };
+}
+class Cake extends GameObject {
+  constructor(x, y, ctx) {
+    super(x, y, 50, 50, ctx);
+    this.image = new Image(150, 150);
+    this.image.src = `images/cake.png`;
+  }
+  draw = () => {
+    //this.ctx.fillStyle = "grey";
+    // xPos, yPos, width, height
+    //this.ctx.fillRect(this.x, this.y, this.width, this.height);
+    //this.ctx.strokeStyle = "black";
+    //this.ctx.strokeRect(this.x, this.y, this.width, this.height);
+    this.ctx.drawImage(
+      this.image,
+      this.x,
+      this.y,
+      this.image.width,
+      this.image.height
+    );
+  };
+}
+class Pasta extends GameObject {
+  constructor(x, y, ctx) {
+    super(x, y, 50, 50, ctx);
+    this.image = new Image(150, 150);
+    this.image.src = `images/set.png`;
   }
   draw = () => {
     //this.ctx.fillStyle = "grey";
