@@ -30,7 +30,7 @@ class Tomato extends GameObject {
   constructor(x, y, ctx) {
     super(x, y, 50, 50, ctx);
     this.image = new Image(100, 100);
-    this.image.src = `images/tomato.png`;
+    this.image.src = `images/Tomato.png`;
   }
   draw = () => {
     //this.ctx.fillStyle = "tomato";
@@ -51,7 +51,7 @@ class Cabbage extends GameObject {
   constructor(x, y, ctx) {
     super(x, y, 50, 50, ctx);
     this.image = new Image(100, 100);
-    this.image.src = `images/cabbage.png`;
+    this.image.src = `images/Cabbage.png`;
   }
 
   draw = () => {
@@ -303,7 +303,7 @@ class Chef extends GameObject {
     handEl.replaceChildren();
     for (let i = 0; i < this.hand.length; i++) {
       const createElement = document.createElement("img");
-      createElement.src = `images/${this.hand[i].toLowerCase()}.png`; //file names and objects name are same.
+      createElement.src = `images/${this.hand[i]}.png`; //file names and objects name are same.
       createElement.className = "handObj";
       handEl.appendChild(createElement);
     }
