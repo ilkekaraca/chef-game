@@ -73,7 +73,7 @@ class Plate extends GameObject {
   constructor(x, y, ctx) {
     super(x, y, 50, 50, ctx);
     this.image = new Image(150, 150);
-    this.image.src = `images/plate.png`;
+    this.image.src = `images/Plate.png`;
   }
   draw = () => {
     // this.ctx.fillStyle = "white";
