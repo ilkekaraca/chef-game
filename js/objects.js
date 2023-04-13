@@ -303,7 +303,7 @@ class Chef extends GameObject {
     handEl.replaceChildren();
     for (let i = 0; i < this.hand.length; i++) {
       const createElement = document.createElement("img");
-      createElement.src = `images/${this.hand[i]}.png`; //file names and objects name are same.
+      createElement.src = `images/${this.hand[i].toLowerCase()}.png`; //file names and objects name are same.
       createElement.className = "handObj";
       handEl.appendChild(createElement);
     }
