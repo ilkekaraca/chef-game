@@ -37,7 +37,6 @@ Hot kitchen is a game which has to complete the orders in full, on time and reac
 
 - Draws order panel
 - Countdown logic and score logic
--
 
 ## Links
 

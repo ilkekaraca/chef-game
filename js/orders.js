@@ -4,6 +4,8 @@ const recipes = [
   ["chopTomato", "Plate"],
   ["chopCabbage", "chopTomato", "Plate"],
 ];
+
+//choose a random recipe and pushes into orders array
 function pickrecipes() {
   if (orders.length === 4) {
     return;
@@ -13,6 +15,9 @@ function pickrecipes() {
   console.log(orders);
   printRecipes();
 }
+
+//shows win or lose screen, shows final score and high score
+//gets and saves high score into localstorage
 function showEndScreen(win) {
   document.querySelector("#game-board").classList.add("hidden");
   document.querySelector(".gameover-screen").classList.remove("hidden");
@@ -39,6 +44,7 @@ function showEndScreen(win) {
   document.getElementById("score").innerText = "0";
 }
 
+//prints requested orders to the screen
 function printRecipes() {
   const domeOrder = document.getElementById("orders");
   domeOrder.replaceChildren();
@@ -49,6 +55,9 @@ function printRecipes() {
     domeOrder.appendChild(createElement);
   }
 }
+
+//countdown logic
+
 let ordertimer, countdownid;
 
 let time;
@@ -67,6 +76,7 @@ function updateCountdown() {
   time--;
 }
 
+//starts timer,starts random recipe picking
 function startOrdering() {
   const startingMinute = 1;
   time = startingMinute * 60;
@@ -75,10 +85,14 @@ function startOrdering() {
   orders = [];
   printRecipes();
 }
+
+//stop order
 function stopOrdering() {
   clearInterval(ordertimer);
   clearInterval(countdownid);
 }
+
+//if the player succesfully delivers an order add points to the score
 function updateScore() {
   const scoreIndex = document.getElementById("score");
   const currentScore = Number(scoreIndex.innerText) + 50;
@@ -90,6 +104,8 @@ function updateScore() {
     showEndScreen(true);
   }
 }
+
+//compares requested orders with delivered recipes
 function compareOrders(food) {
   const orderIndex = orders.findIndex((ord) =>
     ord.every((ing) => food.includes(ing))
