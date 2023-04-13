@@ -139,7 +139,7 @@ body {
   width: 40px;
 }
 .gameover-screen {
-  background-image: url("images/gameoverbg.jpg");
+  background-image: url("../images/gameoverbg.jpg");
   height: 100%;
   background-size: cover;
   font-family: cursive;
