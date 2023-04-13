@@ -18,43 +18,29 @@ Hot kitchen is a game which has to complete the orders in full, on time and reac
 
 ## Backlog
 
+- More levels and more recipes
+- Better animations and better sprites
+
 ## Data structure
 
 #index.js
 
-<ul>
-<li>window.onload = ()</li>
-<li>function animate ()</li>
-<li>function startGame()</li>
-</ul>
+- This file has declarations of game objects. The game loop is in this file.
 
 #objects.js
 
-<ul>
-<li>class GameObjects {}</li>
-<li>class Bench extends GameObjects{}</li>
-<li>class Tomato extends GameObjects{}</li>
-</ul>
+- All the game objects are declared here.
+- Game objects are classes and I used OOP in this file.
+- All the objects extended from base class the GameObject.
 
 #orders.js
 
-<ul>
-<li>const recipes=[]</li>
-<li>function pickrecipes(){}</li>
-<li>function printrecipes(){}</li>
-</ul>
-
-## States y States Transitions
-
-_List of states (views) of your game_
-
-## Task
-
-_List of tasks in order of priority_
+- Draws order panel
+- Countdown logic and score logic
+-
 
 ## Links
 
-- [Trello Link](https://trello.com)
 - [Slides Link](http://slides.com)
-- [Github repository Link](http://github.com)
-- [Deployment Link](http://github.com)
+- [Github repository Link](https://github.com/ilkekaraca/chef-game)
+- [Deployment Link](https://ilkekaraca.github.io/chef-game/)
